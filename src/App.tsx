@@ -1,9 +1,20 @@
+import Navbar from "./components/Navbar"
+import About from "./sections/About"
+import Contact from "./sections/Contact"
+import Hero from "./sections/Hero"
+import Projects from "./sections/Projects"
+import Skills from "./sections/Skills"
 
 function App() {
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-bold">Hello, I'm Tyler! 👋</h1>
-    </main>
+    <>
+    <Navbar />
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
+    <Contact />
+    </>
   )
 }
 
