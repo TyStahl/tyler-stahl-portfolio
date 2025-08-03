@@ -19,8 +19,7 @@ export const siteInfo = {
       "HTML",
       "GdScript",
       "Godot",
-      "Game Design",
-      "AI Prompting"
+      "Game Design"
     ],
     projects: [
       {
