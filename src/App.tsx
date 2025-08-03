@@ -1,4 +1,4 @@
-import Navbar from "./components/Navbar"
+import { AppDrawer, navItems } from "./components/FlyOut"
 import About from "./sections/About"
 import Contact from "./sections/Contact"
 import Hero from "./sections/Hero"
@@ -8,12 +8,14 @@ import Skills from "./sections/Skills"
 function App() {
   return (
     <>
-    <Navbar />
-    <Hero />
-    <About />
-    <Skills />
-    <Projects />
-    <Contact />
+    <AppDrawer items={navItems} />
+    <div className="main-content">
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+    </div>
     </>
   )
 }
