@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import '../App.css';
 
-const navItems = ["About", "Skills", "Projects", "Contact"];
+const navItems = ["Home", "About", "Skills", "Projects", "Contact"];
 
 type AppDrawerProps = {
   items: string[];
@@ -15,12 +16,8 @@ export function AppDrawer({ items }: AppDrawerProps) {
     setIsOpen(!isOpen);
   }
 
-  const handleNavClick = (sectionId: string) => {
+  const handleNavClick = () => {
     setIsOpen(false);
-    const element = document.getElementById(sectionId.toLowerCase());
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (
@@ -32,7 +29,8 @@ export function AppDrawer({ items }: AppDrawerProps) {
           <MenuItems 
             text={item} 
             key={item} 
-            onClick={() => handleNavClick(item.toLowerCase())}
+            path={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+            onClick={handleNavClick}
           />
         ))}
       </div>
@@ -45,14 +43,15 @@ export function AppDrawer({ items }: AppDrawerProps) {
 
 type MenuItemProps = {
   text: string;
+  path: string;
   onClick: () => void;
 };
 
-function MenuItems({ text, onClick }: MenuItemProps) {
+function MenuItems({ text, path, onClick }: MenuItemProps) {
   return (
-    <h3 className="menu-items" onClick={onClick}>
-      {text}
-    </h3>
+    <Link to={path} className="menu-items" onClick={onClick}>
+      <h3>{text}</h3>
+    </Link>
   );
 }
 

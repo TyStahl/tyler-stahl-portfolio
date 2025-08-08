@@ -22,3 +22,16 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables (for Express server)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ESLint cache (you're using ESLint)
+.eslintcache
+
+# npm cache (you're using npm)
+.npm

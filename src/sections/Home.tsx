@@ -1,6 +1,6 @@
 import { siteInfo } from '../siteInfo'
 
-export default function Hero() {
+export default function Home() {
   return (
     <section id="home" className="hero-section">
       <div className="container">
